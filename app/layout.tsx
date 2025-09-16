@@ -134,6 +134,23 @@ export default function MainLayout({
 				})(window,document,'script','dataLayer','GTM-M8SHBZ4D');`,
 					}}
 				/>
+{/* Google tag (gtag.js) */}
+<Script
+	src="https://www.googletagmanager.com/gtag/js?id=G-FRQZ0XBBKY"
+	strategy="afterInteractive"
+/>
+<Script
+	id="gtag-init"
+	strategy="afterInteractive"
+	dangerouslySetInnerHTML={{
+		__html: `
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){window.dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-FRQZ0XBBKY');
+		`,
+	}}
+/>
 				{/* <!-- End Google Tag Manager --> */}
 				<link rel="icon" href="images/favicon.ico" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
