@@ -89,7 +89,7 @@ export const metadata: Metadata = {
 			"Expert IT management and cloud transformation services for small to medium-sized businesses. Tailored solutions with years of industry experience.",
 		images: [
 			{
-				url: "/og-image.jpg", // Add your Open Graph image
+				url: "/og-image.png", // Add your Open Graph image
 				width: 1200,
 				height: 630,
 				alt: "Canada Cloud Solution - Your Future Partner in IT",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
 		title: "Canada Cloud Solution - IT Management & Cloud Transformation",
 		description:
 			"Expert IT management and cloud transformation services for small to medium-sized businesses.",
-		images: ["/og-image.jpg"], // Same image as Open Graph
+		images: ["/og-image.png"], // Same image as Open Graph
 		creator: "@canadacloudsol", // Replace with your Twitter handle
 	},
 	verification: {
