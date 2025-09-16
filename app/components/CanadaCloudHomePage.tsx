@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import {
-	Cloud,
 	Settings,
 	Globe,
 	Users,
@@ -10,8 +9,6 @@ import {
 	MapPin,
 	Lightbulb,
 	ArrowRight,
-	Menu,
-	X,
 } from "lucide-react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -49,21 +46,21 @@ const CanadaCloudHomePage: React.FC = () => {
 									the future of
 								</span>
 								<span
-									className="text-blue-300 block animate-pulse animate-bounce"
+									className="text-blue-300 block animate-bounce"
 									style={{ animationDelay: "1s" }}>
 									cloud innovation
 								</span>
 							</h1>
 
 							<p className="text-xl text-blue-100 leading-relaxed max-w-lg animate-pulse">
-								We're currently working behind the scenes to bring you a
+								We&apos;re currently working behind the scenes to bring you a
 								brand-new digital experience that reflects our commitment to
 								cutting-edge cloud solutions, seamless IT services, and
 								customer-first innovation.
 							</p>
 
 							<p className="text-xl text-blue-100 leading-relaxed max-w-lg animate-pulse">
-								We're currently working behind the scenes to bring you a
+								We&apos;re currently working behind the scenes to bring you a
 								brand-new digital experience that reflects our commitment to
 								cutting-edge cloud solutions, seamless IT services, and
 								customer-first innovation.
@@ -179,8 +176,8 @@ const CanadaCloudHomePage: React.FC = () => {
 							What to Expect
 						</h2>
 						<p className="text-xl text-gray-600">
-							Excellence takes time—and we're building something that's worth
-							it.
+							Excellence takes time—and we&apos;re building something
+							that&apos;s worth it.
 						</p>
 					</div>
 
@@ -193,8 +190,8 @@ const CanadaCloudHomePage: React.FC = () => {
 								Fresh, Modern Design
 							</h3>
 							<p className="text-gray-600">
-								A completely redesigned interface that's intuitive, beautiful,
-								and built for the modern business.
+								A completely redesigned interface that&apos;s intuitive,
+								beautiful, and built for the modern business.
 							</p>
 						</div>
 
@@ -247,14 +244,15 @@ const CanadaCloudHomePage: React.FC = () => {
 						Why the Wait?
 					</h2>
 					<p className="text-xl text-blue-100 mb-8">
-						Because excellence takes time—and we're building something that's
-						worth it.
+						Because excellence takes time—and we&apos;re building something
+						that&apos;s worth it.
 					</p>
 					<div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
 						<p className="text-lg text-white leading-relaxed">
-							We're not just updating our website; we're reimagining how you
-							experience cloud solutions. Every pixel, every interaction, and
-							every feature is being crafted with your success in mind.
+							We&apos;re not just updating our website; we&apos;re reimagining
+							how you experience cloud solutions. Every pixel, every
+							interaction, and every feature is being crafted with your success
+							in mind.
 						</p>
 					</div>
 				</div>

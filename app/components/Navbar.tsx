@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 interface NavbarProps {
 	isMenuOpen: boolean;
@@ -9,22 +10,24 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 	return (
 		<>
-			{" "}
 			{/* Under Construction Banner */}
-			<div className="bg-emerald-500 text-white py-2 px-4 text-center text-md font-semibold rounded-t-lg">
+			<div className="bg-red-600 text-white py-2 px-4 text-center text-sm">
 				🚧 Website Under Construction - Please contact us via the contact
 				section below 🚧
 			</div>
-			<header className="bg-white shadow-sm sticky top-0 z-50 rounded-b-xl">
+
+			<header className="bg-white shadow-sm sticky top-0 z-50">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between items-center py-4">
 						{/* Logo */}
 						<div className="flex items-center space-x-3">
 							<div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-								<img
-									src={"images/logo.png"}
+								<Image
+									src="/images/logo.png"
 									alt="CCS Logo"
-									className="w-8 h-8"
+									width={32}
+									height={32}
+									className="object-contain"
 								/>
 							</div>
 							<div>
@@ -38,6 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 								</p>
 							</div>
 						</div>
+
 						{/* Desktop Navigation */}
 						<nav className="hidden md:flex space-x-8">
 							<a

@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
@@ -7,9 +7,9 @@ const Footer: React.FC = () => {
 		<footer className="bg-blue-50 py-12 rounded-xl relative overflow-hidden">
 			{/* Repeating Logo Background Pattern */}
 			<div
-				className="absolute inset-0 opacity-10 bg-repeat"
+				className="absolute inset-0 opacity-5 bg-repeat"
 				style={{
-					backgroundImage: "url('images/logo.png')",
+					backgroundImage: "url('/images/logo.png')",
 					backgroundSize: "80px 80px",
 				}}></div>
 
@@ -22,7 +22,13 @@ const Footer: React.FC = () => {
 					{/* Logo and Company Name */}
 					<div className="flex items-center justify-center space-x-3 mb-6">
 						<div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
-							<img src={"images/logo.png"} alt="CCS Logo" className="w-8 h-8" />
+							<Image
+								src="/images/logo.png"
+								alt="CCS Logo"
+								width={32}
+								height={32}
+								className="w-8 h-8"
+							/>
 						</div>
 						<div>
 							<h3 className="text-xl font-bold text-gray-800">
