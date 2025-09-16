@@ -11,11 +11,11 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 		<>
 			{" "}
 			{/* Under Construction Banner */}
-			<div className="bg-cyan-950 text-white py-2 px-4 text-center text-md font-semibold">
+			<div className="bg-emerald-500 text-white py-2 px-4 text-center text-md font-semibold rounded-t-lg">
 				🚧 Website Under Construction - Please contact us via the contact
 				section below 🚧
 			</div>
-			<header className="bg-white shadow-sm sticky top-0 z-50 rounded-xl">
+			<header className="bg-white shadow-sm sticky top-0 z-50 rounded-b-xl">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between items-center py-4">
 						{/* Logo */}

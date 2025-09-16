@@ -4,24 +4,38 @@ const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className="bg-blue-900 py-12 rounded-xl">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<footer className="bg-blue-50 py-12 rounded-xl relative overflow-hidden">
+			{/* Repeating Logo Background Pattern */}
+			<div
+				className="absolute inset-0 opacity-10 bg-repeat"
+				style={{
+					backgroundImage: "url('images/logo.png')",
+					backgroundSize: "80px 80px",
+				}}></div>
+
+			{/* Gradient Shade Overlay */}
+			<div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/70 to-blue-100/80"></div>
+
+			{/* Content overlay */}
+			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="text-center">
 					{/* Logo and Company Name */}
 					<div className="flex items-center justify-center space-x-3 mb-6">
-						<div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-							<span className="text-white font-bold text-lg">CCS</span>
+						<div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+							<img src={"images/logo.png"} alt="CCS Logo" className="w-8 h-8" />
 						</div>
 						<div>
-							<h3 className="text-xl font-bold text-white">
-								Canada Cloud Solution
+							<h3 className="text-xl font-bold text-gray-800">
+								<span className="text-red-600">C</span>anada{" "}
+								<span className="text-blue-600">C</span>loud{" "}
+								<span className="text-red-600">S</span>olution
 							</h3>
-							<p className="text-sm text-gray-400">Your Future Partner</p>
+							<p className="text-sm text-gray-600">Your Future Partner</p>
 						</div>
 					</div>
 
 					{/* Company Description */}
-					<p className="text-gray-400 mb-6 max-w-md mx-auto">
+					<p className="text-gray-600 mb-6 max-w-md mx-auto">
 						Building the future of cloud innovation, one solution at a time.
 					</p>
 
@@ -42,10 +56,22 @@ const Footer: React.FC = () => {
 					</div>
 
 					{/* Divider */}
-					<div className="border-t border-gray-700 pt-6">
+					<div className="border-t border-gray-300 pt-6">
 						{/* Copyright */}
-						<p className="text-gray-500 text-sm">
+						<p className="text-gray-600 text-sm mb-2">
 							© {currentYear} Canada Cloud Solution. All rights reserved.
+						</p>
+
+						{/* Powered by */}
+						<p className="text-gray-500 text-xs">
+							Powered by{" "}
+							<a
+								href="https://bluesproutagency.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-blue-600 hover:text-blue-800 transition-colors duration-300">
+								Blue Sprout Agency LLC
+							</a>
 						</p>
 					</div>
 				</div>

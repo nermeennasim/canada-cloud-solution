@@ -25,38 +25,147 @@ const CanadaCloudHomePage: React.FC = () => {
 			<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
 			{/* Hero Section */}
-			<section id="home" className="py-20 lg:py-32">
+			<section
+				id="home"
+				className="py-20 lg:py-32 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 relative overflow-hidden">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center">
-						<div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-700 text-sm font-medium mb-8">
-							<Lightbulb className="w-4 h-4 mr-2" />
-							Coming Soon - New Digital Experience
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+						{/* Left Side - Text Content */}
+						<div className="text-left space-y-8">
+							<div
+								className="inline-flex items-center px-4 py-2 bg-blue-700/50 rounded-full text-blue-200 text-sm font-medium mb-8 backdrop-blur-sm animate-fade-in-left"
+								style={{ animationDelay: "0.1s" }}>
+								<Lightbulb className="w-4 h-4 mr-2" />
+								Coming Soon - New Digital Experience
+							</div>
+
+							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+								<span className="text-white block animate-pulse">
+									Welcome to
+								</span>
+								<span
+									className="text-white block animate-pulse"
+									style={{ animationDelay: "0.5s" }}>
+									the future of
+								</span>
+								<span
+									className="text-blue-300 block animate-pulse animate-bounce"
+									style={{ animationDelay: "1s" }}>
+									cloud innovation
+								</span>
+							</h1>
+
+							<p className="text-xl text-blue-100 leading-relaxed max-w-lg animate-pulse">
+								We're currently working behind the scenes to bring you a
+								brand-new digital experience that reflects our commitment to
+								cutting-edge cloud solutions, seamless IT services, and
+								customer-first innovation.
+							</p>
+
+							<p className="text-xl text-blue-100 leading-relaxed max-w-lg animate-pulse">
+								We're currently working behind the scenes to bring you a
+								brand-new digital experience that reflects our commitment to
+								cutting-edge cloud solutions, seamless IT services, and
+								customer-first innovation.
+							</p>
+
+							<div className="flex flex-col sm:flex-row gap-4 pt-4">
+								<a
+									href="#contact"
+									className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-400 transform hover:scale-105 hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-2xl animate-bounce">
+									Get In Touch
+									<ArrowRight className="ml-2 w-5 h-5" />
+								</a>
+								<a
+									href="#services"
+									className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-semibold rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+									Learn More
+								</a>
+							</div>
 						</div>
+						{/* Right Side - Cloud Illustration */}
+						<div
+							className="flex justify-center lg:justify-end animate-fade-in-right"
+							style={{ animationDelay: "1.8s" }}>
+							<div className="relative">
+								{/* Glowing Cloud SVG */}
+								<svg
+									width="400"
+									height="300"
+									viewBox="0 0 400 300"
+									className="w-full max-w-md lg:max-w-lg">
+									{/* Glow Effect */}
+									<defs>
+										<filter id="glow">
+											<feGaussianBlur stdDeviation="4" result="coloredBlur" />
+											<feMerge>
+												<feMergeNode in="coloredBlur" />
+												<feMergeNode in="SourceGraphic" />
+											</feMerge>
+										</filter>
+									</defs>
 
-						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-							Welcome to the future of{" "}
-							<span className="text-blue-600">cloud innovation</span>
-						</h1>
+									{/* Cloud Shape */}
+									<path
+										d="M100 180 C60 180, 40 150, 60 120 C80 80, 120 80, 140 100 C160 80, 200 80, 220 100 C240 80, 280 80, 300 100 C320 80, 360 80, 380 120 C400 150, 380 180, 340 180 Z"
+										fill="none"
+										stroke="#3B82F6"
+										strokeWidth="3"
+										filter="url(#glow)"
+										className="animate-pulse"
+									/>
 
-						<p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-							We're currently working behind the scenes to bring you a brand-new
-							digital experience that reflects our commitment to cutting-edge
-							cloud solutions, seamless IT services, and customer-first
-							innovation.
-						</p>
+									{/* Inner Cloud Glow */}
+									<path
+										d="M100 180 C60 180, 40 150, 60 120 C80 80, 120 80, 140 100 C160 80, 200 80, 220 100 C240 80, 280 80, 300 100 C320 80, 360 80, 380 120 C400 150, 380 180, 340 180 Z"
+										fill="rgba(59, 130, 246, 0.1)"
+										className="animate-pulse"
+									/>
 
-						<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-							<a
-								href="#contact"
-								className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-								Get In Touch
-								<ArrowRight className="ml-2 w-5 h-5" />
-							</a>
-							<a
-								href="#services"
-								className="inline-flex items-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300">
-								Learn More
-							</a>
+									{/* Floating Dots */}
+									<circle
+										cx="150"
+										cy="120"
+										r="3"
+										fill="#60A5FA"
+										className="animate-bounce">
+										<animate
+											attributeName="opacity"
+											values="0.3;1;0.3"
+											dur="2s"
+											repeatCount="indefinite"
+										/>
+									</circle>
+									<circle
+										cx="250"
+										cy="130"
+										r="2"
+										fill="#93C5FD"
+										className="animate-bounce"
+										style={{ animationDelay: "0.5s" }}>
+										<animate
+											attributeName="opacity"
+											values="0.3;1;0.3"
+											dur="2s"
+											repeatCount="indefinite"
+										/>
+									</circle>
+									<circle
+										cx="320"
+										cy="110"
+										r="2.5"
+										fill="#BFDBFE"
+										className="animate-bounce"
+										style={{ animationDelay: "1s" }}>
+										<animate
+											attributeName="opacity"
+											values="0.3;1;0.3"
+											dur="2s"
+											repeatCount="indefinite"
+										/>
+									</circle>
+								</svg>
+							</div>
 						</div>
 					</div>
 				</div>
