@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-
 interface NavbarProps {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
@@ -16,27 +15,28 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 				section below 🚧
 			</div>
 
-			<header className="bg-white shadow-sm sticky top-0 z-50">
+			<header className="bg-white shadow-sm sticky top-0 z-50 rounded-b-lg">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="flex justify-between items-center py-4">
+					<div className="flex justify-between items-center py-4 rounded-b-lg">
 						{/* Logo */}
 						<div className="flex items-center space-x-3">
-							<div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+							<div className="flex items-center justify-center rounded-lg">
 								<Image
-									src="/images/logo.png"
+									src="/images/logo_3d_CCS.png"
 									alt="CCS Logo"
-									width={32}
-									height={32}
-									className="object-contain"
+									className="object-contain w-14 h-14 sm:w-20 sm:h-20 "
+									width={80}
+									height={80}
+									priority
 								/>
 							</div>
 							<div>
-								<h1 className="text-xl font-bold text-gray-900">
-									<span className="text-red-600">C</span>anada{" "}
-									<span className="text-blue-600">C</span>loud{" "}
-									<span className="text-red-600">S</span>olution
+								<h1 className="text-lg sm:text-xl font-bold text-gray-900">
+									<span className="text-red-600 text-2xl">C</span>anada{" "}
+									<span className="text-blue-600 text-2xl">C</span>loud{" "}
+									<span className="text-red-600 text-2xl">S</span>olution
 								</h1>
-								<p className="text-sm text-gray-600 hidden sm:block">
+								<p className="text-xs sm:text-sm text-gray-600 hidden sm:block">
 									Your Future Partner
 								</p>
 							</div>

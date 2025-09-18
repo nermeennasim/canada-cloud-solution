@@ -7,10 +7,12 @@ const Footer: React.FC = () => {
 		<footer className="bg-blue-50 py-12 rounded-xl relative overflow-hidden">
 			{/* Repeating Logo Background Pattern */}
 			<div
-				className="absolute inset-0 opacity-5 bg-repeat"
+				className="absolute inset-0 opacity-5"
 				style={{
-					backgroundImage: "url('/images/logo.png')",
+					backgroundImage: "url('/images/logo_3d_CCS.png')",
 					backgroundSize: "80px 80px",
+					backgroundRepeat: "repeat",
+					backgroundPosition: "center",
 				}}></div>
 
 			{/* Gradient Shade Overlay */}
@@ -21,13 +23,13 @@ const Footer: React.FC = () => {
 				<div className="text-center">
 					{/* Logo and Company Name */}
 					<div className="flex items-center justify-center space-x-3 mb-6">
-						<div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+						<div className="flex items-center justify-center">
 							<Image
-								src="/images/logo.png"
+								src="/images/logo_3d_CCS.png"
 								alt="CCS Logo"
-								width={32}
-								height={32}
-								className="w-8 h-8"
+								width={56}
+								height={56}
+								className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
 							/>
 						</div>
 						<div>
