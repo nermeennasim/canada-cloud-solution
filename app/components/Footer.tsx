@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
 
 	return (
 		<footer
-			className="bg-white border-t border-gray-200 relative"
+			className="bg-white/70 border-t border-gray-200 relative"
 			style={{
 				backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/014/773/886/non_2x/abstract-network-technology-geometric-dots-network-clipart-connecting-dots-and-lines-global-network-connection-digital-technology-with-plexus-background-illustration-vector.jpg')`,
 				backgroundSize: "cover",
@@ -207,7 +207,7 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 
-				{/* Newsletter Signup */}
+				{/* Newsletter Signup
 				<div className="relative z-10 mt-12 pt-8 border-t border-gray-200">
 					<div className="max-w-md mx-auto text-center">
 						<h4 className="text-lg font-semibold text-gray-900 mb-2">
@@ -227,12 +227,12 @@ const Footer: React.FC = () => {
 								Subscribe
 							</button>
 						</div>
-					</div>
-				</div>
+					</div> 
+				</div>*/}
 			</div>
 
 			{/* Bottom Bar */}
-			<div className="relative z-10 bg-gray-50 border-t border-gray-200">
+			<div className="relative z-10 bg-gray-50 border-t border-gray-200 shadow-2xl">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 					<div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
 						<p className="text-gray-600 text-sm">
