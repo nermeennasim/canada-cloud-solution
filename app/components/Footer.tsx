@@ -64,36 +64,36 @@ const Footer: React.FC = () => {
 						</h4>
 						<ul className="space-y-3">
 							<li>
-								<Link
+								<a
 									href="#cloud-transformation"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaCloud className="w-4 h-4 mr-2 text-blue-500" />
 									Cloud Transformation
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link
+								<a
 									href="#infrastructure"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									Infrastructure Services
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link
+								<a
 									href="#networking"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaNetworkWired className="w-4 h-4 mr-2 text-blue-500" />
 									Network Solutions
-								</Link>
+								</a>
 							</li>
 							<li>
-								<Link
+								<a
 									href="#consulting"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									IT Consulting
-								</Link>
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -103,11 +103,11 @@ const Footer: React.FC = () => {
 						<h4 className="text-lg font-semibold text-gray-900">Quick Links</h4>
 						<ul className="space-y-3">
 							<li>
-								<Link
+								<a
 									href="#about"
 									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									About Us
-								</Link>
+								</a>
 							</li>
 							<li>
 								<Link

@@ -6,17 +6,6 @@ import { useCookiePreferences } from "../lib/cookieManager";
 
 const GA_MEASUREMENT_ID = "G-FRQZ0XBBKY";
 
-declare global {
-	interface Window {
-		gtag: (
-			command: string,
-			targetId: string,
-			config?: Record<string, unknown>
-		) => void;
-		dataLayer: Record<string, unknown>[];
-	}
-}
-
 export default function GoogleAnalytics() {
 	const { preferences, isLoaded } = useCookiePreferences();
 

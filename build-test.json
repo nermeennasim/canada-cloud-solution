@@ -1,0 +1,6 @@
+{
+  "name": "build-test",
+  "scripts": {
+    "check": "next lint --fix && tsc --noEmit && next build"
+  }
+}

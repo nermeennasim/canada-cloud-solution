@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://canadacloudsolution.ca"),
 	title: {
 		default: "Canada Cloud Solution - IT Management & Cloud Transformation",
 		template: "%s | Canada Cloud Solution",

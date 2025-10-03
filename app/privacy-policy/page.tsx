@@ -58,62 +58,62 @@ const PrivacyPolicyPage: React.FC = () => {
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<ul className="space-y-2">
 								<li>
-									<Link
+									<a
 										href="#information-collection"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										1. Information We Collect
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#information-use"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										2. How We Use Information
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#information-sharing"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										3. Information Sharing
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#data-security"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										4. Data Security
-									</Link>
+									</a>
 								</li>
 							</ul>
 							<ul className="space-y-2">
 								<li>
-									<Link
+									<a
 										href="#cookies"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										5. Cookies and Tracking
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#user-rights"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										6. Your Rights
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#international-transfers"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										7. International Transfers
-									</Link>
+									</a>
 								</li>
 								<li>
-									<Link
+									<a
 										href="#contact"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										8. Contact Information
-									</Link>
+									</a>
 								</li>
 							</ul>
 						</div>
