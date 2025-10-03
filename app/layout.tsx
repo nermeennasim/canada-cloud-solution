@@ -13,6 +13,8 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+const G_TAG = "G-BZR5BHEWGR";
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://canadacloudsolution.ca"),
 	title: {
@@ -150,7 +152,7 @@ export default function MainLayout({
 			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white-smoke text-gray-900`}>
-				<GoogleAnalytics gtagId={`${process.env.G_TAG}`} />
+				<GoogleAnalytics gtagId={`${G_TAG}`} />
 				{children}
 			</body>
 		</html>
