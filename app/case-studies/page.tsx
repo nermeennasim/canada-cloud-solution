@@ -15,6 +15,7 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import Link from "next/link";
 
 const CaseStudiesPage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -349,12 +350,12 @@ const CaseStudiesPage: React.FC = () => {
 							achieve similar results with our comprehensive cybersecurity
 							services.
 						</p>
-						<a
+						<Link
 							href="/#contact"
 							className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl">
 							Contact Our Security Experts
 							<ArrowRight className="ml-2 w-5 h-5" />
-						</a>
+						</Link>
 					</div>
 				</div>
 			</section>

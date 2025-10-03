@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 const PrivacyPolicyPage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,62 +58,62 @@ const PrivacyPolicyPage: React.FC = () => {
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<ul className="space-y-2">
 								<li>
-									<a
+									<Link
 										href="#information-collection"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										1. Information We Collect
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#information-use"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										2. How We Use Information
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#information-sharing"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										3. Information Sharing
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#data-security"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										4. Data Security
-									</a>
+									</Link>
 								</li>
 							</ul>
 							<ul className="space-y-2">
 								<li>
-									<a
+									<Link
 										href="#cookies"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										5. Cookies and Tracking
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#user-rights"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										6. Your Rights
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#international-transfers"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										7. International Transfers
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a
+									<Link
 										href="#contact"
 										className="text-blue-600 hover:text-blue-800 transition-colors">
 										8. Contact Information
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
@@ -167,15 +168,9 @@ const PrivacyPolicyPage: React.FC = () => {
 									<li>
 										Professional information (company name, job title, industry)
 									</li>
-									<li>
-										Account credentials and authentication information
-									</li>
-									<li>
-										Payment and billing information for our services
-									</li>
-									<li>
-										Communication records and correspondence with us
-									</li>
+									<li>Account credentials and authentication information</li>
+									<li>Payment and billing information for our services</li>
+									<li>Communication records and correspondence with us</li>
 								</ul>
 							</div>
 							<div>
@@ -183,15 +178,9 @@ const PrivacyPolicyPage: React.FC = () => {
 									Technical Information
 								</h3>
 								<ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-									<li>
-										IP address, browser type, and operating system
-									</li>
-									<li>
-										Device identifiers and network information
-									</li>
-									<li>
-										Website usage data and analytics information
-									</li>
+									<li>IP address, browser type, and operating system</li>
+									<li>Device identifiers and network information</li>
+									<li>Website usage data and analytics information</li>
 									<li>Log files and system performance data</li>
 								</ul>
 							</div>
@@ -209,24 +198,20 @@ const PrivacyPolicyPage: React.FC = () => {
 							</h2>
 						</div>
 						<div className="space-y-4 text-gray-700">
-							<p>We use the collected information for the following purposes:</p>
+							<p>
+								We use the collected information for the following purposes:
+							</p>
 							<ul className="list-disc list-inside space-y-2 ml-4">
 								<li>
 									Provide, maintain, and improve our cloud and cybersecurity
 									services
 								</li>
-								<li>
-									Process transactions and manage customer accounts
-								</li>
+								<li>Process transactions and manage customer accounts</li>
 								<li>
 									Communicate with you about our services, updates, and support
 								</li>
-								<li>
-									Respond to your inquiries and provide customer support
-								</li>
-								<li>
-									Analyze usage patterns to enhance user experience
-								</li>
+								<li>Respond to your inquiries and provide customer support</li>
+								<li>Analyze usage patterns to enhance user experience</li>
 								<li>
 									Comply with legal obligations and regulatory requirements
 								</li>
@@ -273,8 +258,8 @@ const PrivacyPolicyPage: React.FC = () => {
 										Legal Compliance
 									</h4>
 									<p className="text-gray-700 text-sm">
-										When required by law, court order, or to protect our
-										rights and the safety of others.
+										When required by law, court order, or to protect our rights
+										and the safety of others.
 									</p>
 								</div>
 								<div className="p-4 border border-gray-200 rounded-lg">
@@ -282,8 +267,8 @@ const PrivacyPolicyPage: React.FC = () => {
 										Business Transfers
 									</h4>
 									<p className="text-gray-700 text-sm">
-										In connection with mergers, acquisitions, or sale of
-										assets, subject to confidentiality requirements.
+										In connection with mergers, acquisitions, or sale of assets,
+										subject to confidentiality requirements.
 									</p>
 								</div>
 								<div className="p-4 border border-gray-200 rounded-lg">
@@ -321,8 +306,8 @@ const PrivacyPolicyPage: React.FC = () => {
 											Encryption
 										</h4>
 										<p className="text-sm text-gray-700">
-											AES-256 encryption for data at rest and TLS 1.3 for
-											data in transit
+											AES-256 encryption for data at rest and TLS 1.3 for data
+											in transit
 										</p>
 									</div>
 									<div>
@@ -330,8 +315,7 @@ const PrivacyPolicyPage: React.FC = () => {
 											Access Controls
 										</h4>
 										<p className="text-sm text-gray-700">
-											Multi-factor authentication and role-based access
-											controls
+											Multi-factor authentication and role-based access controls
 										</p>
 									</div>
 									<div>
@@ -430,18 +414,14 @@ const PrivacyPolicyPage: React.FC = () => {
 									</p>
 								</div>
 								<div className="p-4 bg-gray-50 rounded-lg">
-									<h4 className="font-semibold text-gray-900 mb-2">
-										Deletion
-									</h4>
+									<h4 className="font-semibold text-gray-900 mb-2">Deletion</h4>
 									<p className="text-sm">
 										Request deletion of your personal data (subject to legal
 										requirements)
 									</p>
 								</div>
 								<div className="p-4 bg-gray-50 rounded-lg">
-									<h4 className="font-semibold text-gray-900 mb-2">
-										Opt-out
-									</h4>
+									<h4 className="font-semibold text-gray-900 mb-2">Opt-out</h4>
 									<p className="text-sm">
 										Unsubscribe from marketing communications at any time
 									</p>
@@ -463,12 +443,16 @@ const PrivacyPolicyPage: React.FC = () => {
 						<div className="space-y-4 text-gray-700">
 							<p>
 								As a global company serving clients worldwide, we may transfer
-								your personal information across international borders. We ensure
-								appropriate safeguards are in place, including:
+								your personal information across international borders. We
+								ensure appropriate safeguards are in place, including:
 							</p>
 							<ul className="list-disc list-inside space-y-2 ml-4">
-								<li>Standard Contractual Clauses approved by regulatory bodies</li>
-								<li>Adequacy decisions for countries with equivalent protection</li>
+								<li>
+									Standard Contractual Clauses approved by regulatory bodies
+								</li>
+								<li>
+									Adequacy decisions for countries with equivalent protection
+								</li>
 								<li>Binding corporate rules for intra-group transfers</li>
 								<li>Your explicit consent where required by law</li>
 							</ul>
@@ -493,27 +477,27 @@ const PrivacyPolicyPage: React.FC = () => {
 							<div className="space-y-2 text-gray-700">
 								<p>
 									<strong>Email:</strong>{" "}
-									<a
+									<Link
 										href="mailto:privacy@canadacloudsolutions.ca"
 										className="text-blue-600 hover:text-blue-800">
 										privacy@canadacloudsolutions.ca
-									</a>
+									</Link>
 								</p>
 								<p>
 									<strong>General Contact:</strong>{" "}
-									<a
+									<Link
 										href="mailto:canadacloudsolutions@gmail.com"
 										className="text-blue-600 hover:text-blue-800">
 										canadacloudsolutions@gmail.com
-									</a>
+									</Link>
 								</p>
 								<p>
 									<strong>Phone:</strong>{" "}
-									<a
+									<Link
 										href="tel:+14156585533"
 										className="text-blue-600 hover:text-blue-800">
 										+1 (415) 658-5533
-									</a>
+									</Link>
 								</p>
 							</div>
 						</div>

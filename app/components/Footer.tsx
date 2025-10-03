@@ -64,36 +64,36 @@ const Footer: React.FC = () => {
 						</h4>
 						<ul className="space-y-3">
 							<li>
-								<a
+								<Link
 									href="#cloud-transformation"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaCloud className="w-4 h-4 mr-2 text-blue-500" />
 									Cloud Transformation
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#infrastructure"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									Infrastructure Services
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#networking"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaNetworkWired className="w-4 h-4 mr-2 text-blue-500" />
 									Network Solutions
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="#consulting"
 									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									IT Consulting
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -103,11 +103,11 @@ const Footer: React.FC = () => {
 						<h4 className="text-lg font-semibold text-gray-900">Quick Links</h4>
 						<ul className="space-y-3">
 							<li>
-								<a
+								<Link
 									href="#about"
 									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									About Us
-								</a>
+								</Link>
 							</li>
 							<li>
 								<Link
@@ -116,13 +116,7 @@ const Footer: React.FC = () => {
 									Case Studies
 								</Link>
 							</li>
-							<li>
-								<a
-									href="#blog"
-									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
-									Blog & Resources
-								</a>
-							</li>
+
 							{/* <li>
 								<a
 									href="#careers"
@@ -159,11 +153,11 @@ const Footer: React.FC = () => {
 									<p className="text-xs text-gray-500 uppercase tracking-wide">
 										Email
 									</p>
-									<a
+									<Link
 										href="mailto:canadacloudsolution@gmail.com"
 										className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium">
 										canadacloudsolution@gmail.com
-									</a>
+									</Link>
 								</div>
 							</div>
 
@@ -173,11 +167,11 @@ const Footer: React.FC = () => {
 									<p className="text-xs text-gray-500 uppercase tracking-wide">
 										Phone
 									</p>
-									<a
+									<Link
 										href="tel:+14156585533"
 										className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium">
 										+1 (415) 658-5533
-									</a>
+									</Link>
 								</div>
 							</div>
 
@@ -199,13 +193,13 @@ const Footer: React.FC = () => {
 									Follow Us
 								</p>
 								<div className="flex space-x-3">
-									<a
+									<Link
 										href="https://www.linkedin.com/company/canadacloudsolution/"
 										target="_blank"
 										rel="noopener noreferrer"
 										className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
 										<FaLinkedin className="w-4 h-4" />
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -245,13 +239,13 @@ const Footer: React.FC = () => {
 						</p>
 						<p className="text-gray-500 text-sm">
 							Powered by{" "}
-							<a
+							<Link
 								href="https://bluesproutagency.com"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-blue-600 hover:text-blue-800 transition-colors font-medium">
 								Blue Sprout Agency LLC
-							</a>
+							</Link>
 						</p>
 					</div>
 				</div>

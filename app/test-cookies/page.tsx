@@ -11,7 +11,7 @@ export default function TestCookiesPage() {
 		updatePreferences,
 		acceptAll,
 		declineOptional,
-		// clearConsent,
+		clearConsent,
 		isLoaded,
 	} = useCookiePreferences();
 	const [testResult, setTestResult] = useState<string>("");
@@ -48,8 +48,7 @@ export default function TestCookiesPage() {
 	};
 
 	const clearStorage = () => {
-		localStorage.removeItem("cookieConsent");
-		localStorage.removeItem("cookiePreferences");
+		clearConsent();
 		setTestResult(
 			"Storage cleared. Refresh the page to see the cookie banner again."
 		);

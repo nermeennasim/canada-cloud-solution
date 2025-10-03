@@ -14,6 +14,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import CookieConsent from "./CookieConsent";
+import Link from "next/link";
 
 const CanadaCloudHomePage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,17 +64,17 @@ const CanadaCloudHomePage: React.FC = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-4 pt-4">
-								<a
+								<Link
 									href="#contact"
 									className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-semibold rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
 									Get In Touch
 									<ArrowRight className="ml-2 w-5 h-5" />
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#services"
 									className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-900 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm">
 									Learn More
-								</a>
+								</Link>
 							</div>
 						</div>
 						{/* Right Side - Cloud Illustration */}
@@ -669,11 +670,11 @@ const CanadaCloudHomePage: React.FC = () => {
 								<Mail className="w-8 h-8 text-white" />
 							</div>
 							<h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
-							<a
+							<Link
 								href="mailto:canadacloudsolutions@gmail.com"
 								className="text-blue-600 hover:text-blue-800 font-medium transition-colors break-all word-break leading-relaxed">
 								canadacloudsolutions@gmail.com
-							</a>
+							</Link>
 						</div>
 
 						<div className="text-center p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
@@ -683,13 +684,13 @@ const CanadaCloudHomePage: React.FC = () => {
 							<h3 className="text-xl font-bold text-gray-900 mb-3">
 								Visit Website
 							</h3>
-							<a
+							<Link
 								href="https://www.canadacloudsolutions.ca"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
 								www.canadacloudsolutions.ca
-							</a>
+							</Link>
 						</div>
 
 						<div className="text-center p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
@@ -697,11 +698,11 @@ const CanadaCloudHomePage: React.FC = () => {
 								<Phone className="w-8 h-8 text-white" />
 							</div>
 							<h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
-							<a
+							<Link
 								href="tel:+14156585533"
 								className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
 								+1 (415) 658-5533
-							</a>
+							</Link>
 						</div>
 					</div>
 
@@ -710,13 +711,13 @@ const CanadaCloudHomePage: React.FC = () => {
 							Connect with us:
 						</p>
 						<div className="flex justify-center space-x-4">
-							<a
+							<Link
 								href="https://www.linkedin.com/company/canadacloudsolution/"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg hover:scale-110 hover:-translate-y-1">
 								<FaLinkedin className="w-6 h-6" />
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

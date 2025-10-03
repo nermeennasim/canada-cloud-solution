@@ -258,11 +258,11 @@ const CookiePreferencesPage: React.FC = () => {
 							<p>
 								For more details about how we use cookies and process your data,
 								please review our{" "}
-								<a
+								<Link
 									href="/privacy-policy"
 									className="text-blue-600 hover:text-blue-800 font-medium">
 									Privacy Policy
-								</a>
+								</Link>
 								.
 							</p>
 							<p>

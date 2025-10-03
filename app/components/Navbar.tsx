@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 interface NavbarProps {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
@@ -44,41 +45,41 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
 						{/* Desktop Navigation */}
 						<nav className="hidden md:flex space-x-6">
-							<a
+							<Link
 								href="#home"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Home
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#about"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								About
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#industries"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Industries
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#services"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Services
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#clients"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Clients
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#why-ccs"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Why CCS
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#contact"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Contact
-							</a>
+							</Link>
 						</nav>
 
 						{/* Mobile Menu Button */}
@@ -98,48 +99,48 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 					{isMenuOpen && (
 						<div className="md:hidden pb-4 border-t border-gray-100">
 							<nav className="flex flex-col space-y-1 pt-4">
-								<a
+								<Link
 									href="#home"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Home
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#about"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									About
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#industries"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Industries
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#services"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Services
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#clients"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Clients
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#why-ccs"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Why CCS
-								</a>
-								<a
+								</Link>
+								<Link
 									href="#contact"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Contact
-								</a>
+								</Link>
 							</nav>
 						</div>
 					)}
