@@ -1,12 +1,20 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 interface NavbarProps {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
+	const { scrollToSection } = useSmoothScroll();
+
+	const handleNavClick = (sectionId: string) => {
+		scrollToSection(sectionId);
+		setIsMenuOpen(false); // Close mobile menu if open
+	};
+
 	return (
 		<>
 			{/* Under Construction Banner */}
@@ -44,41 +52,41 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 
 						{/* Desktop Navigation */}
 						<nav className="hidden md:flex space-x-6">
-							<a
-								href="#home"
+							<button
+								onClick={() => handleNavClick("home")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Home
-							</a>
-							<a
-								href="#about"
+							</button>
+							<button
+								onClick={() => handleNavClick("about")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								About
-							</a>
-							<a
-								href="#industries"
+							</button>
+							<button
+								onClick={() => handleNavClick("industries")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Industries
-							</a>
-							<a
-								href="#services"
+							</button>
+							<button
+								onClick={() => handleNavClick("services")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Services
-							</a>
-							<a
-								href="#clients"
+							</button>
+							<button
+								onClick={() => handleNavClick("clients")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Clients
-							</a>
-							<a
-								href="#why-ccs"
+							</button>
+							<button
+								onClick={() => handleNavClick("why-ccs")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Why CCS
-							</a>
-							<a
-								href="#contact"
+							</button>
+							<button
+								onClick={() => handleNavClick("contact")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Contact
-							</a>
+							</button>
 						</nav>
 
 						{/* Mobile Menu Button */}
@@ -98,48 +106,41 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 					{isMenuOpen && (
 						<div className="md:hidden pb-4 border-t border-gray-100">
 							<nav className="flex flex-col space-y-1 pt-4">
-								<a
-									href="#home"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								<button
+									onClick={() => handleNavClick("home")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Home
-								</a>
-								<a
-									href="#about"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("about")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									About
-								</a>
-								<a
-									href="#industries"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("industries")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Industries
-								</a>
-								<a
-									href="#services"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("services")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Services
-								</a>
-								<a
-									href="#clients"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("clients")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Clients
-								</a>
-								<a
-									href="#why-ccs"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("why-ccs")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Why CCS
-								</a>
-								<a
-									href="#contact"
-									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
-									onClick={() => setIsMenuOpen(false)}>
+								</button>
+								<button
+									onClick={() => handleNavClick("contact")}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Contact
-								</a>
+								</button>
 							</nav>
 						</div>
 					)}

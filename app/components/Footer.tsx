@@ -11,9 +11,11 @@ import {
 } from "react-icons/fa6";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
+	const { scrollToSection } = useSmoothScroll();
 
 	return (
 		<footer className="bg-gray-50 border-t border-gray-200 relative">
@@ -64,36 +66,36 @@ const Footer: React.FC = () => {
 						</h4>
 						<ul className="space-y-3">
 							<li>
-								<a
-									href="#cloud-transformation"
-									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
+								<button
+									onClick={() => scrollToSection("cloud-transformation")}
+									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm text-left">
 									<FaCloud className="w-4 h-4 mr-2 text-blue-500" />
 									Cloud Transformation
-								</a>
+								</button>
 							</li>
 							<li>
-								<a
-									href="#infrastructure"
-									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
+								<button
+									onClick={() => scrollToSection("infrastructure")}
+									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm text-left">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									Infrastructure Services
-								</a>
+								</button>
 							</li>
 							<li>
-								<a
-									href="#networking"
-									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
+								<button
+									onClick={() => scrollToSection("networking")}
+									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm text-left">
 									<FaNetworkWired className="w-4 h-4 mr-2 text-blue-500" />
 									Network Solutions
-								</a>
+								</button>
 							</li>
 							<li>
-								<a
-									href="#consulting"
-									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
+								<button
+									onClick={() => scrollToSection("consulting")}
+									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm text-left">
 									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									IT Consulting
-								</a>
+								</button>
 							</li>
 						</ul>
 					</div>
@@ -103,11 +105,11 @@ const Footer: React.FC = () => {
 						<h4 className="text-lg font-semibold text-gray-900">Quick Links</h4>
 						<ul className="space-y-3">
 							<li>
-								<a
-									href="#about"
-									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
+								<button
+									onClick={() => scrollToSection("about")}
+									className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left">
 									About Us
-								</a>
+								</button>
 							</li>
 							<li>
 								<Link

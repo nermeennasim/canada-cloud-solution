@@ -15,9 +15,11 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import CookieConsent from "./CookieConsent";
 import Link from "next/link";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
 
 const CanadaCloudHomePage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { scrollToSection } = useSmoothScroll();
 
 	return (
 		<div className="min-h-screen bg-white">
@@ -64,17 +66,17 @@ const CanadaCloudHomePage: React.FC = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-4 pt-4">
-								<a
-									href="#contact"
+								<button
+									onClick={() => scrollToSection("contact")}
 									className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 font-semibold rounded-xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl">
 									Get In Touch
 									<ArrowRight className="ml-2 w-5 h-5" />
-								</a>
-								<a
-									href="#services"
+								</button>
+								<button
+									onClick={() => scrollToSection("services")}
 									className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-900 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl backdrop-blur-sm">
 									Learn More
-								</a>
+								</button>
 							</div>
 						</div>
 						{/* Right Side - Cloud Illustration */}

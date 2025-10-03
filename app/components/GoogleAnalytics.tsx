@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import Script from "next/script";
 import { useCookiePreferences } from "../lib/cookieManager";
 
-const GA_MEASUREMENT_ID = "G-FRQZ0XBBKY";
+interface GoogleAnalyticsProps {
+	gtagId: string;
+}
 
-export default function GoogleAnalytics() {
+export default function GoogleAnalytics({ gtagId }: GoogleAnalyticsProps) {
 	const { preferences, isLoaded } = useCookiePreferences();
 
 	useEffect(() => {
@@ -42,7 +44,7 @@ export default function GoogleAnalytics() {
 	return (
 		<>
 			<Script
-				src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+				src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
 				strategy="afterInteractive"
 			/>
 			<Script
@@ -61,7 +63,7 @@ export default function GoogleAnalytics() {
 							wait_for_update: 500,
 						});
 						
-						gtag('config', '${GA_MEASUREMENT_ID}', {
+						gtag('config', '${gtagId}', {
 							page_title: document.title,
 							page_location: window.location.href,
 						});
