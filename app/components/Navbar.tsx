@@ -10,10 +10,10 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 	return (
 		<>
 			{/* Under Construction Banner */}
-			<div className="bg-red-600 text-white py-2 px-4 text-center text-sm">
+			{/* <div className="bg-red-600 text-white py-2 px-4 text-center text-sm">
 				🚧 Website Under Construction - Please contact us via the contact
 				section below 🚧
-			</div>
+			</div> */}
 
 			<header className="bg-white shadow-sm sticky top-0 z-50 rounded-b-lg">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,11 +43,21 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 						</div>
 
 						{/* Desktop Navigation */}
-						<nav className="hidden md:flex space-x-8">
+						<nav className="hidden md:flex space-x-6">
 							<a
 								href="#home"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Home
+							</a>
+							<a
+								href="#about"
+								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+								About
+							</a>
+							<a
+								href="#industries"
+								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+								Industries
 							</a>
 							<a
 								href="#services"
@@ -55,9 +65,14 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 								Services
 							</a>
 							<a
-								href="#about"
+								href="#clients"
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
-								About
+								Clients
+							</a>
+							<a
+								href="#why-ccs"
+								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+								Why CCS
 							</a>
 							<a
 								href="#contact"
@@ -90,16 +105,34 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 									Home
 								</a>
 								<a
+									href="#about"
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+									onClick={() => setIsMenuOpen(false)}>
+									About
+								</a>
+								<a
+									href="#industries"
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+									onClick={() => setIsMenuOpen(false)}>
+									Industries
+								</a>
+								<a
 									href="#services"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
 									Services
 								</a>
 								<a
-									href="#about"
+									href="#clients"
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
 									onClick={() => setIsMenuOpen(false)}>
-									About
+									Clients
+								</a>
+								<a
+									href="#why-ccs"
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium"
+									onClick={() => setIsMenuOpen(false)}>
+									Why CCS
 								</a>
 								<a
 									href="#contact"

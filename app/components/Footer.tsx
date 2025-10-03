@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
 	FaLinkedin,
-	FaXTwitter,
 	FaEnvelope,
 	FaPhone,
 	FaCloud,
@@ -16,15 +16,17 @@ const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer
-			className="bg-white/70 border-t border-gray-200 relative"
-			style={{
-				backgroundImage: `url('https://static.vecteezy.com/system/resources/previews/014/773/886/non_2x/abstract-network-technology-geometric-dots-network-clipart-connecting-dots-and-lines-global-network-connection-digital-technology-with-plexus-background-illustration-vector.jpg')`,
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-			}}>
-			{/* Background Overlay for readability */}
-			<div className="absolute inset-0 bg-white/95"></div>
+		<footer className="bg-gray-50 border-t border-gray-200 relative">
+			{/* Optimized CSS pattern instead of external image */}
+			<div className="absolute inset-0 opacity-5">
+				<div
+					className="w-full h-full"
+					style={{
+						backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px),
+					                  radial-gradient(circle at 75% 75%, #6366f1 1px, transparent 1px)`,
+						backgroundSize: "24px 24px",
+					}}></div>
+			</div>
 
 			{/* Main Footer Content */}
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -88,7 +90,8 @@ const Footer: React.FC = () => {
 							<li>
 								<a
 									href="#consulting"
-									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
+									className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-sm">
+									<FaServer className="w-4 h-4 mr-2 text-blue-500" />
 									IT Consulting
 								</a>
 							</li>
@@ -107,11 +110,11 @@ const Footer: React.FC = () => {
 								</a>
 							</li>
 							<li>
-								<a
-									href="#case-studies"
+								<Link
+									href="/case-studies"
 									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									Case Studies
-								</a>
+								</Link>
 							</li>
 							<li>
 								<a
@@ -120,19 +123,26 @@ const Footer: React.FC = () => {
 									Blog & Resources
 								</a>
 							</li>
-							<li>
+							{/* <li>
 								<a
 									href="#careers"
 									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									Careers
 								</a>
-							</li>
+							</li> */}
 							<li>
-								<a
-									href="#privacy"
+								<Link
+									href="/privacy-policy"
 									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
 									Privacy Policy
-								</a>
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="/cookie-preferences"
+									className="text-gray-600 hover:text-blue-600 transition-colors text-sm">
+									Cookie Settings
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -195,11 +205,6 @@ const Footer: React.FC = () => {
 										rel="noopener noreferrer"
 										className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
 										<FaLinkedin className="w-4 h-4" />
-									</a>
-									<a
-										href="#"
-										className="w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-										<FaXTwitter className="w-4 h-4" />
 									</a>
 								</div>
 							</div>

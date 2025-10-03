@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -122,6 +123,28 @@ export default function MainLayout({
 	return (
 		<html lang="en">
 			<head>
+				{/* Preload critical resources */}
+				<link
+					rel="preload"
+					href="/images/logo.png"
+					as="image"
+					type="image/png"
+				/>
+				<link
+					rel="preload"
+					href="/images/hero-img.jpg"
+					as="image"
+					type="image/jpeg"
+				/>
+				<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+				<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin=""
+				/>
+
 				{/* <!-- Google Tag Manager --> */}
 				<Script
 					id="gtm-script"
@@ -134,23 +157,7 @@ export default function MainLayout({
 				})(window,document,'script','dataLayer','GTM-M8SHBZ4D');`,
 					}}
 				/>
-{/* Google tag (gtag.js) */}
-<Script
-	src="https://www.googletagmanager.com/gtag/js?id=G-FRQZ0XBBKY"
-	strategy="afterInteractive"
-/>
-<Script
-	id="gtag-init"
-	strategy="afterInteractive"
-	dangerouslySetInnerHTML={{
-		__html: `
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){window.dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-FRQZ0XBBKY');
-		`,
-	}}
-/>
+
 				{/* <!-- End Google Tag Manager --> */}
 				<link rel="icon" href="images/favicon.ico" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -167,6 +174,7 @@ export default function MainLayout({
 				</noscript>
 				{/* <!-- End Google Tag Manager (noscript) --> */}
 
+				<GoogleAnalytics />
 				{children}
 			</body>
 		</html>
