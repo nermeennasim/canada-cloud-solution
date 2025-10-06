@@ -475,14 +475,14 @@ const PrivacyPolicyPage: React.FC = () => {
 								exercise your privacy rights, please contact us:
 							</p>
 							<div className="space-y-2 text-gray-700">
-								<p>
+								{/* <p>
 									<strong>Email:</strong>{" "}
 									<Link
 										href="mailto:privacy@canadacloudsolutions.ca"
 										className="text-blue-600 hover:text-blue-800">
 										privacy@canadacloudsolutions.ca
 									</Link>
-								</p>
+								</p> */}
 								<p>
 									<strong>General Contact:</strong>{" "}
 									<Link

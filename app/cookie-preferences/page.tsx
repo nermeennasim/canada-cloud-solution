@@ -8,8 +8,13 @@ import Link from "next/link";
 
 const CookiePreferencesPage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { preferences, updatePreferences, acceptAll, declineOptional, isLoaded } =
-		useCookiePreferences();
+	const {
+		preferences,
+		updatePreferences,
+		acceptAll,
+		declineOptional,
+		isLoaded,
+	} = useCookiePreferences();
 	const [tempPreferences, setTempPreferences] =
 		useState<CookiePreferences>(preferences);
 	const [saved, setSaved] = useState(false);
@@ -24,9 +29,9 @@ const CookiePreferencesPage: React.FC = () => {
 	const handleSave = () => {
 		updatePreferences(tempPreferences);
 		setSaved(true);
-		
+
 		// Force Google Analytics initialization with new preferences
-		if (typeof window !== 'undefined' && window.gtag) {
+		if (typeof window !== "undefined" && window.gtag) {
 			if (tempPreferences.analytics) {
 				window.gtag("consent", "update", {
 					analytics_storage: "granted",
@@ -39,7 +44,7 @@ const CookiePreferencesPage: React.FC = () => {
 				console.log("🚫 Analytics disabled via preferences page");
 			}
 		}
-		
+
 		setTimeout(() => setSaved(false), 3000);
 	};
 
@@ -269,8 +274,8 @@ const CookiePreferencesPage: React.FC = () => {
 							onClick={handleSave}
 							disabled={saved}
 							className={`px-8 py-4 rounded-xl transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center mx-auto space-x-2 ${
-								saved 
-									? "bg-green-600 text-white cursor-not-allowed" 
+								saved
+									? "bg-green-600 text-white cursor-not-allowed"
 									: "bg-blue-600 text-white hover:bg-blue-700"
 							}`}>
 							{saved ? (
@@ -285,7 +290,7 @@ const CookiePreferencesPage: React.FC = () => {
 								</>
 							)}
 						</button>
-						
+
 						{/* Quick Actions */}
 						<div className="flex justify-center space-x-4 mt-6">
 							<button
