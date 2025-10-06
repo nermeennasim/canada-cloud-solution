@@ -6,18 +6,6 @@ export interface CookiePreferences {
 	marketing: boolean;
 }
 
-// Global gtag declaration
-declare global {
-	interface Window {
-		gtag: (
-			command: string,
-			targetId: string,
-			config?: Record<string, unknown>
-		) => void;
-		dataLayer: Record<string, unknown>[];
-	}
-}
-
 export class CookieManager {
 	private static readonly CONSENT_KEY = "cookieConsent";
 	private static readonly CONSENT_DATE_KEY = "cookieConsentDate";

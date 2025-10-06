@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Cookie, Shield, Eye, Settings, BarChart3, Save } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,15 +8,38 @@ import Link from "next/link";
 
 const CookiePreferencesPage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { preferences, updatePreferences, acceptAll, declineOptional } =
+	const { preferences, updatePreferences, acceptAll, declineOptional, isLoaded } =
 		useCookiePreferences();
 	const [tempPreferences, setTempPreferences] =
 		useState<CookiePreferences>(preferences);
 	const [saved, setSaved] = useState(false);
 
+	// Sync tempPreferences with loaded preferences
+	useEffect(() => {
+		if (isLoaded) {
+			setTempPreferences(preferences);
+		}
+	}, [preferences, isLoaded]);
+
 	const handleSave = () => {
 		updatePreferences(tempPreferences);
 		setSaved(true);
+		
+		// Force Google Analytics initialization with new preferences
+		if (typeof window !== 'undefined' && window.gtag) {
+			if (tempPreferences.analytics) {
+				window.gtag("consent", "update", {
+					analytics_storage: "granted",
+				});
+				console.log("🔍 Analytics enabled via preferences page");
+			} else {
+				window.gtag("consent", "update", {
+					analytics_storage: "denied",
+				});
+				console.log("🚫 Analytics disabled via preferences page");
+			}
+		}
+		
 		setTimeout(() => setSaved(false), 3000);
 	};
 
@@ -244,9 +267,58 @@ const CookiePreferencesPage: React.FC = () => {
 					<div className="text-center mt-12">
 						<button
 							onClick={handleSave}
-							className="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl">
-							Save Preferences
+							disabled={saved}
+							className={`px-8 py-4 rounded-xl transition-colors font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center mx-auto space-x-2 ${
+								saved 
+									? "bg-green-600 text-white cursor-not-allowed" 
+									: "bg-blue-600 text-white hover:bg-blue-700"
+							}`}>
+							{saved ? (
+								<>
+									<Save className="w-5 h-5" />
+									<span>Preferences Saved!</span>
+								</>
+							) : (
+								<>
+									<Save className="w-5 h-5" />
+									<span>Save Preferences</span>
+								</>
+							)}
 						</button>
+						
+						{/* Quick Actions */}
+						<div className="flex justify-center space-x-4 mt-6">
+							<button
+								onClick={() => {
+									acceptAll();
+									setTempPreferences({
+										essential: true,
+										analytics: true,
+										functional: true,
+										marketing: true,
+									});
+									setSaved(true);
+									setTimeout(() => setSaved(false), 3000);
+								}}
+								className="px-4 py-2 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors text-sm font-medium">
+								Accept All
+							</button>
+							<button
+								onClick={() => {
+									declineOptional();
+									setTempPreferences({
+										essential: true,
+										analytics: false,
+										functional: false,
+										marketing: false,
+									});
+									setSaved(true);
+									setTimeout(() => setSaved(false), 3000);
+								}}
+								className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium">
+								Decline Optional
+							</button>
+						</div>
 					</div>
 
 					{/* Additional Information */}
