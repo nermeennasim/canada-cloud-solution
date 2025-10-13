@@ -673,9 +673,9 @@ const CanadaCloudHomePage: React.FC = () => {
 							</div>
 							<h3 className="text-xl font-bold text-gray-900 mb-3">Email Us</h3>
 							<Link
-								href="mailto:canadacloudsolutions@gmail.com"
+								href="mailto:info@canadacloudsolution.ca"
 								className="text-blue-600 hover:text-blue-800 font-medium transition-colors break-all word-break leading-relaxed">
-								canadacloudsolutions@gmail.com
+								info@canadacloudsolution.ca
 							</Link>
 						</div>
 

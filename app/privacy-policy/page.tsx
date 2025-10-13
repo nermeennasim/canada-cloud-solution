@@ -486,9 +486,9 @@ const PrivacyPolicyPage: React.FC = () => {
 								<p>
 									<strong>General Contact:</strong>{" "}
 									<Link
-										href="mailto:canadacloudsolutions@gmail.com"
+										href="mailto:info@canadacloudsolution.ca"
 										className="text-blue-600 hover:text-blue-800">
-										canadacloudsolutions@gmail.com
+										info@canadacloudsolution.ca
 									</Link>
 								</p>
 								<p>

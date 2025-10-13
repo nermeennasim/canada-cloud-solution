@@ -156,9 +156,9 @@ const Footer: React.FC = () => {
 										Email
 									</p>
 									<Link
-										href="mailto:canadacloudsolution@gmail.com"
+										href="mailto:info@canadacloudsolution.ca"
 										className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium">
-										canadacloudsolution@gmail.com
+										info@canadacloudsolution.ca
 									</Link>
 								</div>
 							</div>
