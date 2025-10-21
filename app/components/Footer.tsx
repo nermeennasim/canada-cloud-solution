@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
 										Location
 									</p>
 									<p className="text-gray-700 text-sm font-medium">
-										Mississauga, Ontario
+										47 Sentinel Rd, Toronto, Ontario M3J 1V6, CA
 									</p>
 								</div>
 							</div>
