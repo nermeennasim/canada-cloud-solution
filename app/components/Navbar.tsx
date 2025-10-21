@@ -72,11 +72,11 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Services
 							</button>
-							<button
+							{/* <button
 								onClick={() => handleNavClick("clients")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Clients
-							</button>
+							</button> */}
 							<button
 								onClick={() => handleNavClick("why-ccs")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
@@ -126,11 +126,11 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Services
 								</button>
-								<button
+								{/* <button
 									onClick={() => handleNavClick("clients")}
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Clients
-								</button>
+								</button> */}
 								<button
 									onClick={() => handleNavClick("why-ccs")}
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
