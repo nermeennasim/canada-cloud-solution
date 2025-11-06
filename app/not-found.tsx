@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
 	Home,
 	Search,
@@ -11,20 +12,14 @@ import {
 	Mail,
 	Phone,
 } from "lucide-react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 
 export default function NotFound() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	const handleGoBack = () => {
 		window.history.back();
 	};
 
 	return (
 		<div className="min-h-screen bg-white">
-			<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
 			{/* 404 Hero Section */}
 			<section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
 				{/* Background Pattern */}
@@ -79,7 +74,70 @@ export default function NotFound() {
 				</div>
 			</section>
 
-			{/* Helpful Links Section */}
+			{/* Visual Section with Image */}
+			<section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+				<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						{/* Left - Message */}
+						<div>
+							<h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 drop-shadow-lg">
+								Lost in the Cloud?
+							</h2>
+							<p className="text-xl text-gray-700 mb-6 leading-relaxed">
+								Even the best explorers lose their way sometimes. While you were navigating, this page got moved to a different server. But don&apos;t worry&mdash;our team is always here to guide you back.
+							</p>
+							<div className="space-y-4">
+								<div className="flex items-start space-x-3">
+									<div className="flex-shrink-0 h-6 w-6 text-blue-600 pt-1">
+										✓
+									</div>
+									<p className="text-gray-700">
+										<strong>Check the URL</strong> - Make sure the address is correct
+									</p>
+								</div>
+								<div className="flex items-start space-x-3">
+									<div className="flex-shrink-0 h-6 w-6 text-blue-600 pt-1">
+										✓
+									</div>
+									<p className="text-gray-700">
+										<strong>Use navigation</strong> - Browse our main menu for the right section
+									</p>
+								</div>
+								<div className="flex items-start space-x-3">
+									<div className="flex-shrink-0 h-6 w-6 text-blue-600 pt-1">
+										✓
+									</div>
+									<p className="text-gray-700">
+										<strong>Contact support</strong> - Our team can help you find what you need
+									</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Right - Image */}
+						<div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+							<Image
+								src="/images/ci_cd_automation_with_embedded_security_identity_and.jpeg"
+								alt="404 Not Found - Cloud Infrastructure"
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, 50vw"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+							<div className="absolute inset-0 flex items-center justify-center">
+								<div className="text-center">
+									<div className="text-6xl font-bold text-white opacity-80">
+										404
+									</div>
+									<p className="text-white text-lg mt-2 drop-shadow-lg">
+										Page Not Found
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section className="py-20 bg-gray-50">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center mb-16">
@@ -211,8 +269,6 @@ export default function NotFound() {
 					</div>
 				</div>
 			</section>
-
-			<Footer />
 		</div>
 	);
 }

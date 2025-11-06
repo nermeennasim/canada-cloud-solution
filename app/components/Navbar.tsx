@@ -1,7 +1,10 @@
 import React from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useSmoothScroll } from "../hooks/useSmoothScroll";
+
 interface NavbarProps {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
@@ -9,9 +12,16 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 	const { scrollToSection } = useSmoothScroll();
+	const pathname = usePathname();
+	const isHomePage = pathname === "/";
 
 	const handleNavClick = (sectionId: string) => {
-		scrollToSection(sectionId);
+		if (isHomePage) {
+			scrollToSection(sectionId);
+		} else {
+			// Navigate to home page, then scroll to section
+			window.location.href = `/#${sectionId}`;
+		}
 		setIsMenuOpen(false); // Close mobile menu if open
 	};
 
@@ -27,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between items-center py-4 rounded-b-lg">
 						{/* Logo */}
-						<div className="flex items-center space-x-3">
+						<Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
 							<div className="flex items-center justify-center rounded-lg">
 								<Image
 									src="/images/logo_3d_CCS.png"
@@ -48,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 									Your Future Partner
 								</p>
 							</div>
-						</div>
+						</Link>
 
 						{/* Desktop Navigation */}
 						<nav className="hidden md:flex space-x-6">
@@ -72,6 +82,11 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
 								Services
 							</button>
+							<Link
+								href="/case-studies"
+								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+								Case Studies
+							</Link>
 							{/* <button
 								onClick={() => handleNavClick("clients")}
 								className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
@@ -131,6 +146,12 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">
 									Clients
 								</button> */}
+								<Link
+									href="/case-studies"
+									onClick={() => setIsMenuOpen(false)}
+									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left block">
+									Case Studies
+								</Link>
 								<button
 									onClick={() => handleNavClick("why-ccs")}
 									className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 py-3 px-4 rounded-lg font-medium text-left">

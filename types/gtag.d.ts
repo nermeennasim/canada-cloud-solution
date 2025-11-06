@@ -9,10 +9,10 @@ declare global {
 				analytics_storage?: "granted" | "denied";
 				ad_storage?: "granted" | "denied";
 				wait_for_update?: number;
-				[key: string]: any;
+				[key: string]: unknown;
 			}
 		) => void;
-		dataLayer: any[];
+		dataLayer: unknown[];
 	}
 }
 

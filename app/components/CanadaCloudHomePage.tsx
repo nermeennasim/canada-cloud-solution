@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
 	Settings,
 	Globe,
@@ -9,13 +10,16 @@ import {
 	MapPin,
 	Lightbulb,
 	ArrowRight,
+	Shield,
 } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import CookieConsent from "./CookieConsent";
+import LoadingScreen from "./LoadingScreen";
 import Link from "next/link";
 import { useSmoothScroll } from "../hooks/useSmoothScroll";
+import ServicesSection from "./ServicesSection";
 
 const CanadaCloudHomePage: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +27,9 @@ const CanadaCloudHomePage: React.FC = () => {
 
 	return (
 		<div className="min-h-screen bg-white">
+			{/* Loading Screen */}
+			<LoadingScreen />
+			
 			{/* Header */}
 			<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
@@ -39,12 +46,12 @@ const CanadaCloudHomePage: React.FC = () => {
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
 						{/* Left Side - Text Content */}
 						<div className="text-left space-y-8">
-							<div
+							{/* <div
 								className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full text-white text-sm font-medium mb-8 backdrop-blur-sm animate-fade-in-left border border-white/30"
 								style={{ animationDelay: "0.1s" }}>
 								<Lightbulb className="w-4 h-4 mr-2" />
 								Coming Soon - New Digital Experience
-							</div>
+							</div> */}
 
 							<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
 								<span className="text-white block drop-shadow-lg">
@@ -179,26 +186,69 @@ const CanadaCloudHomePage: React.FC = () => {
 				{/* Light overlay to ensure readability */}
 				<div className="absolute inset-0 bg-white/85"></div>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-					<div className="text-center mb-16">
-						<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 drop-shadow-sm">
-							About Us
-						</h2>
-						<div className="max-w-4xl mx-auto">
-							<p className="text-lg text-gray-700 leading-relaxed mb-6">
-								Since 2004, Canada Cloud Solutions (CCS) has been empowering
-								enterprises, governments, and non-profits worldwide with
-								end-to-end cloud, cybersecurity, and IT infrastructure services.
-								Operating across North America, South America, the Middle East,
-								UK, Europe, Japan, South Asia, and Australia, we deliver
-								innovative managed solutions as an MSP (Managed Service
-								Provider), MSSP (Managed Security Service Provider), and CSP
-								(Cloud Solution Provider).
-							</p>
-							<p className="text-lg text-gray-700 leading-relaxed">
-								Our mission is to simplify digital transformation by securing,
-								modernizing, and optimizing enterprise IT environments—helping
-								clients achieve resilience, compliance, and sustainable growth.
-							</p>
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						{/* Left Column - Content */}
+						<div>
+							<h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 drop-shadow-sm">
+								About Us
+							</h2>
+							<div className="space-y-6">
+								<p className="text-lg text-gray-700 leading-relaxed">
+									The enterprise challenge is real: digital transformation demands simultaneous progress on three critical fronts—cloud modernization, cybersecurity resilience, and operational efficiency. Yet most organizations lack the in-house expertise and resources to execute all three effectively.
+								</p>
+								<p className="text-lg text-gray-700 leading-relaxed">
+									Canada Cloud Solutions was founded in 2019 to solve this exact problem. We recognized that enterprises needed more than vendors; they needed a strategic partner who could navigate the intersection of cloud, security, and operations—someone who understood their industry, their compliance requirements, and their business goals.
+								</p>
+								<p className="text-lg text-gray-700 leading-relaxed">
+									From our partners across North America, South America, the Middle East, Europe, UK, Japan, South Asia, and Australia, our team of certified experts delivers:
+								</p>
+								
+								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+									<div className="flex items-start space-x-3">
+										<div className="text-blue-600 text-2xl font-bold flex-shrink-0">✓</div>
+										<p className="text-gray-700">
+											<span className="font-semibold">End-to-end cloud architecture & migration expertise</span>
+										</p>
+									</div>
+									<div className="flex items-start space-x-3">
+										<div className="text-blue-600 text-2xl font-bold flex-shrink-0">✓</div>
+										<p className="text-gray-700">
+											<span className="font-semibold">Zero Trust security frameworks & continuous compliance</span>
+										</p>
+									</div>
+									<div className="flex items-start space-x-3">
+										<div className="text-blue-600 text-2xl font-bold flex-shrink-0">✓</div>
+										<p className="text-gray-700">
+											<span className="font-semibold">24/7 managed infrastructure & operations with 99.99% SLAs</span>
+										</p>
+									</div>
+									<div className="flex items-start space-x-3">
+										<div className="text-blue-600 text-2xl font-bold flex-shrink-0">✓</div>
+										<p className="text-gray-700">
+											<span className="font-semibold">Strategic consulting from industry-leading CISSP, CISM, and SC-100 certified professionals</span>
+										</p>
+									</div>
+								</div>
+
+								<div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-600 rounded-lg p-6">
+									<p className="text-lg font-semibold text-gray-900 mb-2">Our Mission</p>
+									<p className="text-gray-700 leading-relaxed">
+										Eliminate the complexity. We secure your environment, modernize your infrastructure, and optimize your operations—so you can focus on what matters: growing your business.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Right Column - Image */}
+						<div className="relative rounded-2xl overflow-hidden shadow-xl h-96 lg:h-full">
+							<Image
+								src="/images/strategic_consulting_it_audit_expert_advisory_2.jpeg"
+								alt="Canada Cloud Solutions Expert Team"
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent"></div>
 						</div>
 					</div>
 				</div>
@@ -407,98 +457,168 @@ const CanadaCloudHomePage: React.FC = () => {
 				</div>
 			</section>
 
+			{/* New Services Section - Detailed Interactive Cards */}
+			<ServicesSection />
+
 			{/* Global Client Engagements Section - REMOVED */}
 
-			{/* Why CCS Section */}
+			{/* Why CCS Section - Enhanced with Video Background */}
 			<section
 				id="why-ccs"
-				className="py-20 relative"
-				style={{
-					backgroundImage: `linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 64, 175, 0.85)), url('https://media.licdn.com/dms/image/v2/C561BAQH9rQZAJuunXA/company-background_10000/company-background_10000/0/1585277333835/atlasitics_cover?e=2147483647&v=beta&t=bCnjD-2fXF6P7XNYLavhxSJd56UERq-NdR4g15ICPTk')`,
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					backgroundRepeat: "no-repeat",
-				}}>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				className="py-20 relative overflow-hidden"
+			>
+				{/* Video Background */}
+				<video
+					src="/images/managed_infrastructure_operations_24_7_proactive_infrastructure.mp4"
+					autoPlay
+					muted
+					loop
+					playsInline
+					className="absolute inset-0 w-full h-full object-cover"
+				/>
+
+				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+					{/* Header */}
 					<div className="text-center mb-16">
-						<h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-							Why CCS?
+						<h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+							Why Choose Canada Cloud Solutions?
 						</h2>
+						<p className="text-xl text-gray-100 max-w-3xl mx-auto drop-shadow-md leading-relaxed">
+							Industry veterans with 30+ years of collective expertise, staying ahead of cutting-edge cloud market trends and latest best practices. We don&apos;t just implement solutions&mdash;we architect your competitive advantage.
+						</p>
 					</div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+					{/* Core Reasons Grid */}
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+						{/* Trusted Since */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-blue-400/30 border-2 border-blue-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
 								<Globe className="w-8 h-8 text-white" />
 							</div>
 							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								20+ Years Global Experience
+								Trusted Since 2019
 							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								Trusted MSP, MSSP, CSP operating worldwide since 2004
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								Serving public, private, and government sectors across Canada and beyond. Proven track record with 500+ enterprise partnerships.
 							</p>
 						</div>
 
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-								<Settings className="w-8 h-8 text-white" />
-							</div>
-							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								Deep Cloud Expertise
-							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								Microsoft, AWS, and Google Cloud Security specialists
-							</p>
-						</div>
-
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+						{/* Deep Industry Experience */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-blue-400/30 border-2 border-blue-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
 								<Users className="w-8 h-8 text-white" />
 							</div>
 							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								Certified Teams
+								30+ Years Industry Expertise
 							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								CISSP, Microsoft, AWS, GCP, VMware, Fortinet, ISC2 certified
-								professionals
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								Our team brings decades of collective experience navigating cloud evolution, from on-prem to hybrid to Zero Trust and AI-driven operations.
 							</p>
 						</div>
 
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-								<Lightbulb className="w-8 h-8 text-white" />
-							</div>
-							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								End-to-End Solutions
-							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								From System Engineering to Advanced Cybersecurity
-							</p>
-						</div>
-
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-								<Globe className="w-8 h-8 text-white" />
-							</div>
-							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								Multi-Industry Track Record
-							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								Financial, Government, Healthcare, and Enterprise clients
-							</p>
-						</div>
-
-						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-							<div className="w-16 h-16 bg-white/20 border-2 border-white/40 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+						{/* Certified Professionals */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-blue-400/30 border-2 border-blue-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
 								<Settings className="w-8 h-8 text-white" />
 							</div>
 							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
-								Customer-Centric Approach
+								Industry-Certified Experts
 							</h3>
-							<p className="text-gray-200 drop-shadow-md">
-								Scalable, Secure, and Cost-Effective Solutions
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								Microsoft, AWS, Google Cloud, VMware, Cisco, and ISACA-certified engineers. CISSP, CISM, SC-100 credentials across the team.
 							</p>
 						</div>
+
+						{/* End-to-End Expertise */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-blue-400/30 border-2 border-blue-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+								<Lightbulb className="w-8 h-8 text-white" />
+							</div>
+							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+								End-to-End Expertise
+							</h3>
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								From infrastructure to compliance, one unified team. Cloud architecture, security, operations, and strategic consulting—all under one roof.
+							</p>
+						</div>
+
+						{/* Security-First Culture */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-red-400/30 border-2 border-red-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+								<Shield className="w-8 h-8 text-white" />
+							</div>
+							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+								Security-First Culture
+							</h3>
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								Every project begins and ends with Zero Trust principles. Security isn&apos;t bolted on&mdash;it&apos;s foundational to everything we build.
+							</p>
+						</div>
+
+						{/* Nationwide Presence */}
+						<div className="group p-8 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/30 hover:border-white/50 hover:bg-white/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+							<div className="w-16 h-16 bg-green-400/30 border-2 border-green-300/50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+								<MapPin className="w-8 h-8 text-white" />
+							</div>
+							<h3 className="text-xl font-bold text-white mb-3 drop-shadow-lg">
+								Coast-to-Coast Presence
+							</h3>
+							<p className="text-gray-200 drop-shadow-md leading-relaxed">
+								From Vancouver to Halifax and globally. Local support with enterprise-grade capabilities. Your timezone, our commitment.
+							</p>
+						</div>
+					</div>
+
+					{/* Cutting Edge Advantage */}
+					<div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-md border-2 border-blue-300/50">
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+							<div>
+								<h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">
+									Staying Ahead of Market Trends
+								</h3>
+								<p className="text-gray-100 mb-6 leading-relaxed drop-shadow-md">
+									Our experts continuously monitor emerging cloud technologies, AI-driven operations, and evolving security landscapes. We bring the latest best practices to your infrastructure before they become standard.
+								</p>
+								<ul className="space-y-3">
+									<li className="flex items-start space-x-3">
+										<span className="text-green-400 font-bold text-lg flex-shrink-0">✓</span>
+										<span className="text-gray-100">AI-powered automation and threat detection</span>
+									</li>
+									<li className="flex items-start space-x-3">
+										<span className="text-green-400 font-bold text-lg flex-shrink-0">✓</span>
+										<span className="text-gray-100">Next-gen cloud architecture patterns</span>
+									</li>
+									<li className="flex items-start space-x-3">
+										<span className="text-green-400 font-bold text-lg flex-shrink-0">✓</span>
+										<span className="text-gray-100">Continuous compliance and governance</span>
+									</li>
+									<li className="flex items-start space-x-3">
+										<span className="text-green-400 font-bold text-lg flex-shrink-0">✓</span>
+										<span className="text-gray-100">Cost optimization through advanced analytics</span>
+									</li>
+								</ul>
+							</div>
+							<div className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-2xl border-2 border-white/30">
+								<Image
+									src="/images/staying_ahead_of_market_trends_create_image.jpeg"
+									alt="Cutting Edge Cloud Technology"
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 100vw, 50vw"
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+							</div>
+						</div>
+					</div>
+
+					{/* CTA */}
+					<div className="text-center mt-16">
+						<Link
+							href="/#contact"
+							className="inline-flex items-center justify-center px-10 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transform hover:scale-105 transition-all duration-200 shadow-2xl hover:shadow-3xl drop-shadow-lg">
+							Start Your Transformation
+							<ArrowRight className="ml-2 w-5 h-5" />
+						</Link>
 					</div>
 				</div>
 			</section>
