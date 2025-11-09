@@ -492,12 +492,12 @@ const PrivacyPolicyPage: React.FC = () => {
 									</Link>
 								</p>
 								<p>
-									<strong>Phone:</strong>{" "}
-									<Link
-										href="tel:+14156585533"
-										className="text-blue-600 hover:text-blue-800">
-										+1 (415) 658-5533
-									</Link>
+								<strong>Phone:</strong>{" "}
+								<Link
+									href="tel:+13512093666"
+									className="text-blue-600 hover:text-blue-800">
+									+1 (351) 209-3666
+								</Link>
 								</p>
 							</div>
 						</div>

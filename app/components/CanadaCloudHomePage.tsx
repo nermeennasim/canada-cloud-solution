@@ -685,9 +685,9 @@ const CanadaCloudHomePage: React.FC = () => {
 							</div>
 							<h3 className="text-xl font-bold text-gray-900 mb-3">Call Us</h3>
 							<Link
-								href="tel:+14156585533"
+								href="tel:+13512093666"
 								className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
-								+1 (415) 658-5533
+								+1 (351) 209-3666
 							</Link>
 						</div>
 					</div>

@@ -261,7 +261,7 @@ export default function NotFound() {
 							<span>Email Support</span>
 						</Link>
 						<Link
-							href="tel:+14156585533"
+							href="tel:+13512093666"
 							className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors font-semibold flex items-center space-x-2">
 							<Phone className="w-5 h-5" />
 							<span>Call Us</span>

@@ -176,11 +176,11 @@ const Footer: React.FC = () => {
 									<p className="text-xs text-gray-500 uppercase tracking-wide">
 										Phone
 									</p>
-									<Link
-										href="tel:+14156585533"
-										className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium">
-										+1 (415) 658-5533
-									</Link>
+								<Link
+									href="tel:+13512093666"
+									className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium">
+									+1 (351) 209-3666
+								</Link>
 								</div>
 							</div>
 
